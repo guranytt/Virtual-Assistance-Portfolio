@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Mail,
@@ -14,6 +14,7 @@ import {
   MapPin,
   Clock,
   ShieldCheck,
+  BadgeCheck,
 } from 'lucide-react';
 import {
   CLIENT_PROFILE,
@@ -21,12 +22,30 @@ import {
   HOW_I_WORK,
   TOOLS,
   SAMPLE_PROJECTS,
+  certifications,
 } from '../content';
 import { AnimationSlot } from '../components/AnimationSlot';
 import { WorkCard } from '../components/WorkCard';
 import { ContactSection } from '../components/ContactSection';
 
 export const HomePage: React.FC = () => {
+  const certsRef = useRef<HTMLElement>(null);
+  const [certsVisible, setCertsVisible] = useState(false);
+
+  useEffect(() => {
+    if (!certsRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCertsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(certsRef.current);
+    return () => observer.disconnect();
+  }, []);
   const getServiceIcon = (iconName: string) => {
     switch (iconName) {
       case 'Mail':
@@ -221,11 +240,6 @@ export const HomePage: React.FC = () => {
                 Instead of empty claims, here are 5 comprehensive sample projects with realistic scenarios, problem breakdowns, and exact outputs.
               </p>
             </div>
-
-            <div className="p-3 rounded-2xl bg-[#F4E9DC] border border-[#E6D7C5] text-xs text-[#6B564D] max-w-xs">
-              <span className="font-semibold text-[#3D2C24] block mb-0.5">Fictional Data Notice</span>
-              All company names, inquiries, and customer records are fictional demonstrations to showcase my precision and turnaround time.
-            </div>
           </div>
 
           {/* 5 Cards Responsive Grid */}
@@ -329,7 +343,59 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. ABOUT SECTION (HONEST POSITIONING) */}
+      {/* 6. CERTIFICATIONS SECTION */}
+      <section
+        id="certifications"
+        ref={certsRef}
+        className="scroll-mt-24"
+        aria-labelledby="certifications-heading"
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className={`transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 ${
+              certsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}
+          >
+            <div className="text-center max-w-xl mx-auto mb-10">
+              <span className="text-xs font-semibold text-[#8D746A] uppercase tracking-wider block mb-2">
+                Verified Training
+              </span>
+              <h2
+                id="certifications-heading"
+                className="font-serif text-2xl sm:text-3xl font-bold text-[#3D2C24] mb-2"
+              >
+                Certifications
+              </h2>
+              <p className="text-sm sm:text-base text-[#6B564D]">
+                Training completed to support my work.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 max-w-4xl mx-auto">
+              {certifications.map((cert) => (
+                <div
+                  key={cert.title}
+                  className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E6D7C5] shadow-soft flex items-start gap-4 transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-0.5"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-[#81B29A]/15 text-[#5B8874] flex items-center justify-center shrink-0">
+                    <BadgeCheck className="w-5 h-5 text-[#5B8874]" aria-hidden="true" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#3D2C24] mb-1 leading-snug">
+                      {cert.title}
+                    </h3>
+                    <p className="text-sm text-[#8D746A] font-medium">
+                      {cert.issuer}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. ABOUT SECTION (HONEST POSITIONING) */}
       <section id="about" className="scroll-mt-24" aria-labelledby="about-heading">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[#FFF8F0] via-[#FAF3EB] to-[#F4E9DC] rounded-3xl p-8 sm:p-12 border border-[#E6D7C5] shadow-soft">

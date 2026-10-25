@@ -165,6 +165,24 @@ export const TOOLS: ToolItem[] = [
   { name: 'Canva', category: 'Design', useCase: 'Basic social graphics & executive slide decks' },
 ];
 
+export interface CertificationItem {
+  title: string;
+  issuer: string;
+}
+
+export const certifications: CertificationItem[] = [
+  {
+    title: 'Working as a Virtual Assistant',
+    issuer: 'Alison',
+  },
+  {
+    title: 'Service Hub Software Certification',
+    issuer: 'HubSpot Academy',
+  },
+];
+
+export const CERTIFICATIONS = certifications;
+
 export interface EmailTriageItem {
   id: string;
   sender: string;

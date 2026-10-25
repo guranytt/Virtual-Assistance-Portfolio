@@ -25,6 +25,7 @@ export const Header: React.FC = () => {
     { label: 'Work', href: '/#work' },
     { label: 'Services', href: '/#services' },
     { label: 'How I Work', href: '/#how-i-work' },
+    { label: 'Certifications', href: '/#certifications' },
     { label: 'About', href: '/#about' },
     { label: 'Contact', href: '/#contact' },
   ];
