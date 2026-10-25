@@ -48,7 +48,7 @@ export const ContactSection: React.FC = () => {
     setStatus('loading');
     setErrorMessage('');
 
-    const apiKey = import.meta.env.VITE_WEB3FORMS_KEY;
+    const apiKey = import.meta.env.VITE_WEB3FORMS_KEY || CLIENT_PROFILE.web3formsKey;
 
     try {
       // If no valid API key is configured yet in environment, simulate successful demo submission

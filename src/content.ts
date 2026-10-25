@@ -36,6 +36,7 @@ export interface ClientProfile {
   whatsappNumber: string;
   whatsappMessage: string;
   resumeUrl: string;
+  web3formsKey: string;
 }
 
 export const CLIENT_PROFILE: ClientProfile = {
@@ -50,6 +51,7 @@ export const CLIENT_PROFILE: ClientProfile = {
   whatsappNumber: "2349068809134",
   whatsappMessage: "Hi Great, I found your portfolio and I'd like to talk about some help.",
   resumeUrl: "/Great-Iniobong-Resume.pdf",
+  web3formsKey: "48ff131a-42ff-4eb4-ad8f-c336a9a473f2",
 };
 
 /**
