@@ -72,11 +72,13 @@ export const SampleProjectPage: React.FC = () => {
           <span>Back to all sample projects</span>
         </Link>
 
-        {/* Mandatory Fictional Data Badge */}
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-200 text-xs font-semibold">
-          <AlertCircle className="w-3.5 h-3.5 text-amber-700" />
-          <span>Sample project — fictional data</span>
-        </span>
+        {/* Fictional data badge displayed on inbox-triage only */}
+        {project.slug === 'inbox-triage' && (
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-200 text-xs font-semibold">
+            <AlertCircle className="w-3.5 h-3.5 text-amber-700" />
+            <span>Sample project — fictional data</span>
+          </span>
+        )}
       </div>
 
       {/* Header section: Title, Subtitle, Time Taken, Tools Used */}
