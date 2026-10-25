@@ -1,0 +1,6 @@
+{
+  "name": "Great Iniobong - Virtual Assistant Portfolio",
+  "description": "Portfolio of Great Iniobong, Virtual Assistant based in Ibadan, Nigeria specializing in admin support, calendar and inbox management, data entry, and customer replies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

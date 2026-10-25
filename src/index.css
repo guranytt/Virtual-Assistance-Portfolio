@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FFF8F0;
+  --color-terracotta: #E07A5F;
+  --color-terracotta-dark: #C85F44;
+  --color-terracotta-light: #F4A28C;
+  --color-sage: #81B29A;
+  --color-sage-dark: #5B8874;
+  --color-sage-light: #B8D5C7;
+  --color-sand: #F4E9DC;
+  --color-sand-dark: #E6D7C5;
+  --color-sand-light: #FAF4EC;
+  --color-brown: #3D2C24;
+  --color-brown-muted: #6B564D;
+  --color-brown-light: #8D746A;
+
+  --font-serif: "Fraunces", serif;
+  --font-sans: "DM Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-brown);
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom soft shadows and utility accents */
+.shadow-soft {
+  box-shadow: 0 10px 30px -10px rgba(61, 44, 36, 0.08), 0 4px 12px -4px rgba(61, 44, 36, 0.04);
+}
+
+.shadow-soft-lg {
+  box-shadow: 0 20px 40px -15px rgba(61, 44, 36, 0.12), 0 8px 20px -6px rgba(61, 44, 36, 0.06);
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 3px;
+}
