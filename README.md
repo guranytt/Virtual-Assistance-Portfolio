@@ -45,7 +45,7 @@ In `src/content.ts`, locate the `CLIENT_PROFILE` constant:
 ```typescript
 export const CLIENT_PROFILE: ClientProfile = {
   // ...
-  whatsappNumber: "2348123456789", // <-- Replace with your actual phone number!
+  whatsappNumber: "2349068809134",
   whatsappMessage: "Hi Great, I found your portfolio and I'd like to talk about some help.",
   // ...
 };

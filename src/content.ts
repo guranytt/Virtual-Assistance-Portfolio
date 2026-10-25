@@ -47,7 +47,7 @@ export const CLIENT_PROFILE: ClientProfile = {
   intro: "I help busy founders, creators, and small teams protect their focus by handling daily email triage, schedule coordination, data cleaning, and patient customer communication.",
   honestPositioning: "I am a dedicated university student in Ibadan stepping into professional virtual assistant work. Rather than inventing years of corporate seniority, I let my actual work samples speak for themselves. You can evaluate my speed, accuracy, and tone through a low-risk paid trial task before committing to ongoing support.",
   paidTrialOffer: "Start with a 1 to 2 hour paid trial task. If you're pleased with my work, we can arrange regular weekly support.",
-  whatsappNumber: "2348123456789", // <-- Great, update this with your actual WhatsApp phone number!
+  whatsappNumber: "2349068809134",
   whatsappMessage: "Hi Great, I found your portfolio and I'd like to talk about some help.",
   resumeUrl: "/Great-Iniobong-Resume.pdf",
 };
