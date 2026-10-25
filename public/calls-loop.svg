@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Customer support call and notes animation showing an incoming call being managed and call notes verified">
+  <title>Customer support call notes loop</title>
+  <style>
+    text { font-family: 'DM Sans', system-ui, -apple-system, sans-serif; font-weight: 700; fill: #3D2C24; }
+    .accept-pulse, .call-ripple, .check-resolve {
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .accept-pulse {
+      animation: acceptRing 3.4s ease-in-out infinite;
+    }
+    .call-ripple {
+      animation: rippleEffect 3.4s ease-out infinite;
+    }
+    .notes-reveal {
+      animation: notesFade 3.4s cubic-bezier(0.3, 1.3, 0.5, 1) infinite;
+    }
+    .check-resolve {
+      animation: checkPop 3.4s cubic-bezier(0.3, 1.4, 0.5, 1) infinite;
+    }
+    @keyframes acceptRing {
+      0%, 20% { transform: scale(1); }
+      30% { transform: scale(1.15); }
+      40% { transform: scale(1.05); }
+      50% { transform: scale(1.15); }
+      60%, 100% { transform: scale(1); }
+    }
+    @keyframes rippleEffect {
+      0%, 20% { opacity: 0; transform: scale(1); }
+      30% { opacity: 0.5; transform: scale(1.35); }
+      50% { opacity: 0; transform: scale(1.6); }
+      100% { opacity: 0; transform: scale(1); }
+    }
+    @keyframes notesFade {
+      0%, 25% { opacity: 0.5; transform: translateY(4px); }
+      45%, 85% { opacity: 1; transform: translateY(0); }
+      95%, 100% { opacity: 0.5; transform: translateY(4px); }
+    }
+    @keyframes checkPop {
+      0%, 35% { transform: scale(0.85); opacity: 0.6; }
+      50%, 85% { transform: scale(1); opacity: 1; }
+      95%, 100% { transform: scale(0.85); opacity: 0.6; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .accept-pulse, .call-ripple, .notes-reveal, .check-resolve { animation: none !important; }
+    }
+  </style>
+
+  <!-- Outer background card -->
+  <rect x="8" y="8" width="624" height="404" rx="56" fill="#F4E9DC"/>
+  <circle cx="72" cy="76" r="38" fill="#FFFDF9" opacity=".55"/>
+  <circle cx="584" cy="190" r="26" fill="#E9C5B6" opacity=".5"/>
+
+  <!-- Left Card: Incoming Call -->
+  <g id="incoming-call-card">
+    <rect x="70" y="68" width="235" height="284" rx="36" fill="#FFFDF9" stroke="#3D2C24" stroke-opacity=".15" stroke-width="2"/>
+
+    <!-- Avatar circle & silhouette -->
+    <circle cx="187" cy="138" r="42" fill="#EAE0D2"/>
+    <circle cx="187" cy="128" r="14" fill="#A89482"/>
+    <path d="M165 162 A 22 17 0 0 1 209 162 Z" fill="#A89482"/>
+
+    <!-- Incoming Call Text -->
+    <text x="187" y="208" text-anchor="middle" font-size="18" fill="#3D2C24">Incoming call</text>
+
+    <!-- Reject Button -->
+    <circle cx="137" cy="265" r="24" fill="#E07A5F"/>
+    <path d="M128 256 L146 274 M146 256 L128 274" stroke="#FFFDF9" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Accept Button & Ripple -->
+    <circle class="call-ripple" cx="237" cy="265" r="24" fill="#81B29A" opacity="0"/>
+    <g class="accept-pulse">
+      <circle cx="237" cy="265" r="24" fill="#81B29A"/>
+      <!-- Phone icon -->
+      <path d="M228 260 C228 266 233 271 239 271 L242 271 C243 271 244 270 244 269 L244 266 C244 265 243 264 242 264 L239 264 C238 264 237 265 237 266 C234 264 233 262 232 260 C233 259 234 259 234 258 L234 255 C234 254 233 253 232 253 L229 253 C228 253 228 254 228 255 Z" fill="#FFFDF9"/>
+    </g>
+  </g>
+
+  <!-- Right Card: Call Notes -->
+  <g id="call-notes-card">
+    <rect x="335" y="68" width="235" height="284" rx="36" fill="#FFFDF9" stroke="#3D2C24" stroke-opacity=".15" stroke-width="2"/>
+
+    <text x="360" y="106" font-size="18" fill="#3D2C24">Call notes</text>
+
+    <!-- Notes text placeholders -->
+    <g class="notes-reveal">
+      <rect x="360" y="128" width="168" height="13" rx="6.5" fill="#E6D7C5"/>
+      <rect x="360" y="156" width="132" height="13" rx="6.5" fill="#E6D7C5"/>
+      <rect x="360" y="184" width="156" height="13" rx="6.5" fill="#E6D7C5"/>
+    </g>
+
+    <!-- Resolved checkmark & indicator -->
+    <g class="check-resolve" transform="translate(0, 0)">
+      <circle cx="372" cy="254" r="12" fill="#81B29A"/>
+      <path d="M367.5 254 L370.5 257 L376.5 251" fill="none" stroke="#FFFDF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="394" y="247" width="120" height="14" rx="7" fill="#A7CEBF"/>
+    </g>
+  </g>
+</svg>

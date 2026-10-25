@@ -152,6 +152,32 @@ export const HomePage: React.FC = () => {
                 className="bg-white rounded-3xl p-7 sm:p-8 border border-[#E6D7C5] shadow-soft hover:shadow-soft-lg transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
+                  {service.id === 'data-entry' && (
+                    <div className="rounded-2xl overflow-hidden mb-6 bg-[#F4E9DC]/60 border border-[#E6D7C5]/60 aspect-[640/420]">
+                      <img
+                        src="/spreadsheet-loop.svg"
+                        alt="Animated spreadsheet cleanup showing formatted data rows and verified status"
+                        width={640}
+                        height={420}
+                        loading="lazy"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  )}
+
+                  {service.id === 'customer-support' && (
+                    <div className="rounded-2xl overflow-hidden mb-6 bg-[#F4E9DC]/60 border border-[#E6D7C5]/60 aspect-[640/420]">
+                      <img
+                        src="/calls-loop.svg"
+                        alt="Animated customer support workflow demonstrating call reception and prompt call note documentation"
+                        width={640}
+                        height={420}
+                        loading="lazy"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  )}
+
                   <div className="w-12 h-12 rounded-2xl bg-[#FFF8F0] border border-[#F4E9DC] flex items-center justify-center mb-5">
                     {getServiceIcon(service.icon)}
                   </div>

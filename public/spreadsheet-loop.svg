@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="img" aria-label="Spreadsheet cleanup animation showing messy records highlighted and formatted to clean status">
+  <title>Data entry and spreadsheet cleanup loop</title>
+  <style>
+    text { font-family: 'DM Sans', system-ui, -apple-system, sans-serif; font-weight: 700; fill: #3D2C24; }
+    .scan-box, .phone-clean, .badge-pop, .check-tick {
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .scan-box {
+      animation: scanCycle 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .phone-clean {
+      animation: cleanCycle 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .badge-pop {
+      animation: badgePop 3.6s cubic-bezier(0.3, 1.4, 0.5, 1) infinite;
+    }
+    .check-tick {
+      animation: checkStroke 3.6s ease-in-out infinite;
+    }
+    @keyframes scanCycle {
+      0%, 15% { stroke: #E07A5F; stroke-dasharray: 6 4; stroke-width: 1.5px; fill: #FAF3EB; }
+      45%, 85% { stroke: #81B29A; stroke-dasharray: none; stroke-width: 2px; fill: #F2F8F4; }
+      95%, 100% { stroke: #E07A5F; stroke-dasharray: 6 4; stroke-width: 1.5px; fill: #FAF3EB; }
+    }
+    @keyframes cleanCycle {
+      0%, 20% { fill: #E5D5C1; stroke: #C85F44; stroke-dasharray: 3 3; stroke-width: 1.5; transform: scaleX(0.9); transform-origin: center; }
+      45%, 85% { fill: #6AA58B; stroke: none; transform: scaleX(1); transform-origin: center; }
+      95%, 100% { fill: #E5D5C1; stroke: #C85F44; stroke-dasharray: 3 3; stroke-width: 1.5; transform: scaleX(0.9); }
+    }
+    @keyframes badgePop {
+      0%, 25% { transform: scale(0.92); opacity: 0.8; }
+      45%, 85% { transform: scale(1); opacity: 1; }
+      95%, 100% { transform: scale(0.92); opacity: 0.8; }
+    }
+    @keyframes checkStroke {
+      0%, 25% { transform: scale(0.8) rotate(-10deg); opacity: 0.7; }
+      45%, 85% { transform: scale(1) rotate(0); opacity: 1; }
+      95%, 100% { transform: scale(0.8) rotate(-10deg); opacity: 0.7; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .scan-box, .phone-clean, .badge-pop, .check-tick { animation: none !important; }
+    }
+  </style>
+
+  <!-- Outer background card matching portfolio style -->
+  <rect x="8" y="8" width="624" height="404" rx="56" fill="#F4E9DC"/>
+  <circle cx="72" cy="76" r="38" fill="#FFFDF9" opacity=".55"/>
+  <circle cx="584" cy="190" r="26" fill="#E9C5B6" opacity=".5"/>
+
+  <!-- Main Spreadsheet Card -->
+  <g id="table-card">
+    <rect x="70" y="44" width="500" height="332" rx="36" fill="#FFFDF9" stroke="#3D2C24" stroke-opacity=".15" stroke-width="2"/>
+
+    <!-- Column Headers -->
+    <text x="110" y="94" font-size="16" fill="#6B564D">Name</text>
+    <text x="284" y="94" font-size="16" fill="#6B564D">City</text>
+    <text x="414" y="94" font-size="16" fill="#6B564D">Phone</text>
+    <line x1="90" y1="110" x2="550" y2="110" stroke="#3D2C24" stroke-opacity=".14" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Row 1 -->
+    <g transform="translate(0, 126)">
+      <rect x="90" y="0" width="460" height="36" rx="12" fill="#FAF4EC" fill-opacity=".6"/>
+      <rect x="108" y="10" width="95" height="16" rx="8" fill="#E6D7C5"/>
+      <rect x="280" y="10" width="62" height="16" rx="8" fill="#E6D7C5"/>
+      <rect x="410" y="10" width="105" height="16" rx="8" fill="#E6D7C5"/>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(0, 172)">
+      <rect x="90" y="0" width="460" height="36" rx="12" fill="#FAF4EC" fill-opacity=".6"/>
+      <rect x="108" y="10" width="95" height="16" rx="8" fill="#E6D7C5"/>
+      <rect x="280" y="10" width="62" height="16" rx="8" fill="#E6D7C5"/>
+      <rect x="410" y="10" width="105" height="16" rx="8" fill="#E6D7C5"/>
+    </g>
+
+    <!-- Row 3 (Active Cleanup Row) -->
+    <g transform="translate(0, 218)">
+      <rect class="scan-box" x="90" y="0" width="460" height="38" rx="14" fill="#FAF3EB" stroke="#E07A5F" stroke-width="1.5"/>
+      <rect x="108" y="11" width="95" height="16" rx="8" fill="#E6D7C5"/>
+      <rect x="280" y="11" width="62" height="16" rx="8" fill="#E6D7C5"/>
+      <rect class="phone-clean" x="410" y="11" width="105" height="16" rx="8" fill="#6AA58B"/>
+    </g>
+
+    <!-- Row 4 -->
+    <g transform="translate(0, 266)">
+      <rect x="90" y="0" width="460" height="36" rx="12" fill="#FAF4EC" fill-opacity=".6"/>
+      <rect x="108" y="10" width="95" height="16" rx="8" fill="#E6D7C5"/>
+      <rect x="280" y="10" width="62" height="16" rx="8" fill="#E6D7C5"/>
+      <rect x="410" y="10" width="105" height="16" rx="8" fill="#E6D7C5"/>
+    </g>
+
+    <!-- Cleaned Status Pill Badge -->
+    <g transform="translate(390, 316)">
+      <g class="badge-pop">
+        <rect x="0" y="0" width="140" height="42" rx="21" fill="#E2F1E8" stroke="#5B8874" stroke-width="2"/>
+        <g class="check-tick" transform="translate(26, 21)">
+          <circle r="12" fill="#5B8874"/>
+          <path d="M-4.5 0 L-1.5 3.5 L5 -3" fill="none" stroke="#FFFDF9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <text x="50" y="27" font-size="16" fill="#3D2C24">Cleaned</text>
+      </g>
+    </g>
+  </g>
+</svg>
