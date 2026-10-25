@@ -155,6 +155,7 @@ export interface ToolItem {
 }
 
 export const TOOLS: ToolItem[] = [
+  { name: 'Microsoft Office Suite', category: 'Productivity', useCase: 'MS Word formatting, Excel spreadsheets & PowerPoint' },
   { name: 'Gmail', category: 'Communication', useCase: 'Inbox zero triage, labels & canned filters' },
   { name: 'Google Calendar', category: 'Scheduling', useCase: 'Cross-timezone planning & meeting audit' },
   { name: 'Google Docs', category: 'Documentation', useCase: 'Standard Operating Procedures & research' },
