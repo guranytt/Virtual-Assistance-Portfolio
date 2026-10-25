@@ -77,10 +77,10 @@ export const HomePage: React.FC = () => {
               </p>
 
               {/* Action Buttons: "See my work", "Download resume", "Chat on WhatsApp" */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 pt-2">
                 <a
                   href="#work"
-                  className="px-6 py-3.5 rounded-full bg-[#E07A5F] hover:bg-[#C85F44] text-white font-medium text-sm transition-all duration-200 shadow-sm hover:shadow hover:-translate-y-0.5 inline-flex items-center gap-2"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#E07A5F] hover:bg-[#C85F44] text-white font-medium text-sm transition-all duration-200 shadow-sm hover:shadow hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
                 >
                   <span>See my work</span>
                   <ArrowRight className="w-4 h-4" />
@@ -91,7 +91,7 @@ export const HomePage: React.FC = () => {
                   download="Great-Iniobong-Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-3.5 rounded-full border border-[#E6D7C5] bg-[#F4E9DC]/70 hover:bg-[#F4E9DC] text-[#3D2C24] font-medium text-sm transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center gap-2"
+                  className="w-full sm:w-auto px-5 py-3.5 rounded-full border border-[#E6D7C5] bg-[#F4E9DC]/70 hover:bg-[#F4E9DC] text-[#3D2C24] font-medium text-sm transition-all duration-200 hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
                 >
                   <FileDown className="w-4 h-4 text-[#E07A5F]" />
                   <span>Download resume</span>
@@ -101,7 +101,7 @@ export const HomePage: React.FC = () => {
                   href={whatsappHeroUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-3.5 rounded-full bg-[#81B29A] hover:bg-[#5B8874] text-white font-medium text-sm transition-all duration-200 shadow-sm hover:shadow hover:-translate-y-0.5 inline-flex items-center gap-2"
+                  className="w-full sm:w-auto px-5 py-3.5 rounded-full bg-[#81B29A] hover:bg-[#5B8874] text-white font-medium text-sm transition-all duration-200 shadow-sm hover:shadow hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>Chat on WhatsApp</span>
